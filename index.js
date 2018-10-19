@@ -35,6 +35,7 @@ const njkLoader = (startPath, alias) => {
 };
 
 module.exports = function loader (source) {
+  source = source.replace(/({%.+?)>(.+?%})/gi, "$1&gt;$2").replace(/({%.+?)<(.+?%})/gi, "$1&lt;$2"); //将 > < 替换成实体字符
   const options = loaderUtils.getOptions(this) || {};
   const env      = new nunjucks.Environment(njkLoader(this.context, options.alias), { tags: options.tags });
   const compiled = nunjucks.compile(source, env);
