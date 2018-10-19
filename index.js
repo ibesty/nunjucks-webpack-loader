@@ -36,10 +36,11 @@ const njkLoader = (startPath, alias) => {
 
 module.exports = function loader (source) {
   const options = loaderUtils.getOptions(this) || {};
-
-  const env      = new nunjucks.Environment(njkLoader(this.context, options.alias));
+  const env      = new nunjucks.Environment(njkLoader(this.context, options.alias), { tags: options.tags });
   const compiled = nunjucks.compile(source, env);
-  const rendered = compiled.render(options.context || {}).replace(/\n|\r/g,'').replace(/"/g, '\\"');
+  // console.log(compiled)
+  const rendered = compiled.render(options.context || {});
+  // const rendered = compiled.render(options.context || {}).replace(/\n|\r/g,'').replace(/"/g, '\\"');
 
   return rendered;
 }
