@@ -13,6 +13,10 @@
   ],
   "author": "bestie",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ibesty/nunjucks-webpack-loader.git"
+  },
   "dependencies": {
     "chardet": "^0.7.0",
     "loader-utils": "^1.1.0",
