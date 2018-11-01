@@ -25,9 +25,13 @@ const njkLoader = (startPath, alias) => {
       const dataBuffer = fs.readFileSync(completePath);
       const charset = chardet.detect(dataBuffer);
 
+      // console.log(dataBuffer.toString(charset, 0, dataBuffer.length))
+      // return
+      console.log(completePath, charset)
+
       return {
         src: dataBuffer
-          .toString(charset, 0, dataBuffer.length)
+          .toString('UTF-8', 0, dataBuffer.length)
           .replace(/({%.+?)>(.+?%})/gi, '$1&gt;$2')
           .replace(/({%.+?)<(.+?%})/gi, '$1&lt;$2'), //将 > < 替换成实体字符,
         path: completePath
@@ -45,7 +49,7 @@ module.exports = function loader(source) {
     tags: options.tags
   });
   const compiled = nunjucks.compile(source, env);
-  // console.log(compiled)
+  // console.log(compiled.tmplStr.indexOf('head') >= 0 ? compiled.tmplStr : '')
   const rendered = compiled.render(options.context || {});
   // const rendered = compiled.render(options.context || {}).replace(/\n|\r/g,'').replace(/"/g, '\\"');
 
