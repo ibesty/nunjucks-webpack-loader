@@ -27,7 +27,7 @@ const njkLoader = (startPath, alias) => {
 
       // console.log(dataBuffer.toString(charset, 0, dataBuffer.length))
       // return
-      console.log(completePath, charset)
+      // console.log(completePath, charset)
 
       return {
         src: dataBuffer
