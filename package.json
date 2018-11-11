@@ -8,10 +8,13 @@
   },
   "keywords": [
     "nunjucks",
+    "nunjucks loader",
+    "nunjucks webpack loader",
     "webpack",
+    "webpack-loader",
     "loader"
   ],
-  "author": "bestie",
+  "author": "Bestie",
   "license": "MIT",
   "repository": {
     "type": "git",

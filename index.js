@@ -5,6 +5,8 @@ const nunjucks = require('nunjucks');
 const path = require('path');
 
 module.exports = function(source) {
+  const options = loaderUtils.getOptions(this) || {};
+
   const njkLoader = (startPath, alias) => {
     const resolvePath = filePath => {
       if (typeof alias === 'object') {
@@ -38,7 +40,6 @@ module.exports = function(source) {
     };
   };
 
-  const options = loaderUtils.getOptions(this) || {};
   if (options.tags) {
     source = source
       .replace(/({%.+?)>(.+?%})/gi, '$1&gt;$2')
