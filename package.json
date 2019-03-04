@@ -21,8 +21,8 @@
     "url": "git@github.com:ibesty/nunjucks-webpack-loader.git"
   },
   "dependencies": {
-    "chardet": "^0.7.0",
     "loader-utils": "^1.1.0",
     "nunjucks": "^3.1.3"
-  }
+  },
+  "devDependencies": {}
 }

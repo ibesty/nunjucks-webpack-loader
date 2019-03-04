@@ -1,0 +1,86 @@
+Html Webpack Plugin:
+<pre>
+  Error: Child compilation failed:
+  Module build failed (from ./node_modules/val-loader/dist/cjs.js):
+  TypeError: Data must be a string or a buffer
+  
+  - v8-compile-cache.js:221 NativeCompileCache._moduleCompile
+    [example]/[v8-compile-cache]/v8-compile-cache.js:221:8
+  
+  - v8-compile-cache.js:172 Module._compile
+    [example]/[v8-compile-cache]/v8-compile-cache.js:172:36
+  
+  - NormalModule.js:181 Object.exec
+    [example]/[webpack]/lib/NormalModule.js:181:12
+  
+  
+  - TypeError: Data must be a string or a buffer
+  
+  - compiler.js:79 childCompiler.runAsChild
+    [example]/[html-webpack-plugin]/lib/compiler.js:79:16
+  
+  - Compiler.js:306 compile
+    [example]/[webpack]/lib/Compiler.js:306:11
+  
+  - Compiler.js:630 hooks.afterCompile.callAsync.err
+    [example]/[webpack]/lib/Compiler.js:630:14
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [example]/[tapable]/lib/Hook.js:154:20
+  
+  - Compiler.js:627 compilation.seal.err
+    [example]/[webpack]/lib/Compiler.js:627:30
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [example]/[tapable]/lib/Hook.js:154:20
+  
+  - Compilation.js:1325 hooks.optimizeAssets.callAsync.err
+    [example]/[webpack]/lib/Compilation.js:1325:35
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [example]/[tapable]/lib/Hook.js:154:20
+  
+  - Compilation.js:1316 hooks.optimizeChunkAssets.callAsync.err
+    [example]/[webpack]/lib/Compilation.js:1316:32
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [example]/[tapable]/lib/Hook.js:154:20
+  
+  - Compilation.js:1311 hooks.additionalAssets.callAsync.err
+    [example]/[webpack]/lib/Compilation.js:1311:36
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [example]/[tapable]/lib/Hook.js:154:20
+  
+  - Compilation.js:1307 hooks.optimizeTree.callAsync.err
+    [example]/[webpack]/lib/Compilation.js:1307:32
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [example]/[tapable]/lib/Hook.js:154:20
+  
+  - Compilation.js:1244 Compilation.seal
+    [example]/[webpack]/lib/Compilation.js:1244:27
+  
+  - Compiler.js:624 hooks.make.callAsync.err
+    [example]/[webpack]/lib/Compiler.js:624:17
+  
+  
+  - Compilation.js:1095 _addModuleChain
+    [example]/[webpack]/lib/Compilation.js:1095:12
+  
+  - Compilation.js:1007 processModuleDependencies.err
+    [example]/[webpack]/lib/Compilation.js:1007:9
+  
+  - next_tick.js:131 _combinedTickCallback
+    internal/process/next_tick.js:131:7
+  
+  - next_tick.js:180 process._tickCallback
+    internal/process/next_tick.js:180:9
+  
+</pre>
