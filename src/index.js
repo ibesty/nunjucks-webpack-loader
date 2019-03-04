@@ -1,16 +1,16 @@
-const chardet = require('chardet');
-const fs = require('fs');
-const loaderUtils = require('loader-utils');
-const nunjucks = require('nunjucks');
-const path = require('path');
+import fs from 'fs';
+import loaderUtils from 'loader-utils';
+import nunjucks from 'nunjucks';
+import path from 'path';
 
-module.exports = function(source) {
+function nunjucksWebpackLoader (source) {
   const options = loaderUtils.getOptions(this) || {};
 
   const njkLoader = (startPath, alias) => {
     const resolvePath = filePath => {
       if (typeof alias === 'object') {
-        for (key in alias) {
+        console.log(alias)
+        for (let key in alias) {
           const patt = new RegExp(`^~${key}`);
   
           if (patt.test(filePath)) {
@@ -53,3 +53,5 @@ module.exports = function(source) {
 
   return rendered;
 }
+
+export default nunjucksWebpackLoader;

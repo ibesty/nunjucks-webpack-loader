@@ -29,57 +29,28 @@ module.exports = {
       },
       {
         test: /\.njk/,
-        oneOf: [
-          {
-            resourceQuery: /func/, // index.njk?func
-            use: [
-              // {loader: "html-loader"},
-              {
-                loader: 'nunjucks-webpack-loader',
-                options: {
-                  context: {
-                    someString: 'some test string'
-                  },
-                  alias: {
-                    common: path.resolve(__dirname, `./template/common/`),
-                  },
-                  tags: {
-                    blockStart: '@{%',
-                    blockEnd: '%}',
-                    variableStart: '@{{',
-                    variableEnd: '}}',
-                    commentStart: '{#',
-                    commentEnd: '#}'
-                  }
+        use: [
+            {loader: "html-loader"},
+            {
+              loader: 'nunjucks-webpack-loader',
+              options: {
+                context: {
+                  someString: 'some test string'
+                },
+                alias: {
+                  common: path.resolve(__dirname, `./template/common/`),
+                },
+                tags: {
+                  blockStart: '@{%',
+                  blockEnd: '%}',
+                  variableStart: '@{{',
+                  variableEnd: '}}',
+                  commentStart: '{#',
+                  commentEnd: '#}'
                 }
               }
-            ]
-          },
-          {
-            use: [
-              {loader: "html-loader"},
-              {
-                loader: 'nunjucks-webpack-loader',
-                options: {
-                  context: {
-                    someString: 'some test string'
-                  },
-                  alias: {
-                    common: path.resolve(__dirname, `./template/common/`),
-                  },
-                  tags: {
-                    blockStart: '@{%',
-                    blockEnd: '%}',
-                    variableStart: '@{{',
-                    variableEnd: '}}',
-                    commentStart: '{#',
-                    commentEnd: '#}'
-                  }
-                }
-              }
-            ]
-          }
-        ],
+            }
+          ]
       }
     ]
   },

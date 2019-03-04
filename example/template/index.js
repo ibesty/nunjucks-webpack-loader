@@ -1,4 +1,3 @@
-const index = require('val-loader!./index.njk?func');
-const indexHtml = index.render({ otherContext: 'otherContext' });
+const indexHtml = require('./index.njk')
 
 module.exports = indexHtml
