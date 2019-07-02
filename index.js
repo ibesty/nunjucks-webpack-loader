@@ -48,6 +48,13 @@ module.exports = function(source) {
   const env = new nunjucks.Environment(njkLoader(this.context, options.alias), {
     tags: options.tags
   });
+
+  if (options.globals) {
+    for (const key of Object.keys(options.globals)) {
+      env.addGlobal(key, options.globals[key])
+    }
+  }
+
   const compiled = nunjucks.compile(source, env);
   const rendered = compiled.render(options.context || {});
 
